@@ -86,9 +86,45 @@ function isMotsEqual(mot1, mot2){
 de passe doit contenir au moins 8 caractères, une majuscule, une minuscule, et un chiffre. Écrivez
 un programme qui vérifie si un mot de passe donné respecte ces conditions. */
 function exercice3() {
+	let isAccepted = false;
 	let password = prompt("Rentrez un mot de passe d'au moins 8 caractères comportant au moins une minuscule, une majuscule et un chiffre svp");
-	let isAccepted = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$/.test(password);
+	isAccepted = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$/.test(password);
+	while(!isAccepted){
+		let needMajuscules = false;
+		let needMinuscules = false;
+		let needNumbers = false;
+		let needMoreChars = false;
+		let message = "Faux! Il manque ";
+		if(!isAccepted) {
+			if(!/[A-Z]+/.test(password)) {
+				needMajuscules = true;
+				message += " des majuscules, ";
+			}
+			if(!/[a-z]+/.test(password)){
+				needMinuscules = true;
+				message += ' des minuscules, ';
+			}
+			if(!/[0-9]+/.test(password)){
+				needNumbers = true;
+				message += ' des nombres, ';
+			}
+			if(password.length < 8){
+				needMoreChars = true;
+				if(needMajuscules || needMinuscules || needNumbers){
+					message += " et il doit contenir au moins 8 caractères";
+				}
+				else {
+					message = "Faux! Votre mot de passe doit contenir au moins 8 caractères.";
+				}
+			}
 
+			password = window.prompt(message);
+			isAccepted = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$/.test(password);
+
+
+
+		}
+	}
 	isAccepted ? console.log("Votre mot de passe est correct") : console.log("Votre mot de passe est incorrect");
 }
 
