@@ -16,3 +16,12 @@ Exercice 2:
 identiques.
 
 -> You can find my answer to this exercise inside index.js at Exercise 2 function
+
+Exercice 3:
+Vous êtes développeur et vous devez créer un système de vérification des mots de passe. Le mot
+de passe doit contenir au moins 8 caractères, une majuscule, une minuscule, et un chiffre. Écrivez
+un programme qui vérifie si un mot de passe donné respecte ces conditions.
+1. Définir la regExp associée
+2. Tester si valide
+
+La regExp que nous utiliserons est la suivante: /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$/

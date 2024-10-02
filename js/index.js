@@ -78,7 +78,18 @@ function isMotsEqual(mot1, mot2){
 	return true;
 }
 
+//exercise2();
 
 
+//Exercice 3
+/*Vous êtes développeur et vous devez créer un système de vérification des mots de passe. Le mot
+de passe doit contenir au moins 8 caractères, une majuscule, une minuscule, et un chiffre. Écrivez
+un programme qui vérifie si un mot de passe donné respecte ces conditions. */
+function exercice3() {
+	let password = prompt("Rentrez un mot de passe d'au moins 8 caractères comportant au moins une minuscule, une majuscule et un chiffre svp");
+	let isAccepted = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$/.test(password);
 
-exercise2();
+	isAccepted ? console.log("Votre mot de passe est correct") : console.log("Votre mot de passe est incorrect");
+}
+
+exercice3();
