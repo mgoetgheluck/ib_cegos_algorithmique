@@ -14,3 +14,5 @@ Exercice 2:
 2. Convertissez les deux mots en majuscules.
 3. Comparez les deux mots (en ignorant les espaces supplementaires) et indiquez s'ils sont
 identiques.
+
+-> You can find my answer to this exercise inside index.js at Exercise 2 function
