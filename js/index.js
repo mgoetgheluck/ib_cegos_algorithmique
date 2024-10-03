@@ -94,28 +94,22 @@ function exercice3() {
 		let needMinuscules = false;
 		let needNumbers = false;
 		let needMoreChars = false;
-		let message = "Faux! Il manque ";
+		let message = "Faux!\n";
 		if(!isAccepted) {
 			if(!/[A-Z]+/.test(password)) {
 				needMajuscules = true;
-				message += " des majuscules, ";
+				message += "Votre mot de passe doit contenir des majuscules.\n";
 			}
 			if(!/[a-z]+/.test(password)){
 				needMinuscules = true;
-				message += ' des minuscules, ';
+				message += 'Votre mot de passe doit contenir des minuscules.\n';
 			}
-			if(!/[0-9]+/.test(password)){
+			if(!/^(?=.*?[0-9])$/.test(password)){
 				needNumbers = true;
-				message += ' des nombres, ';
+				message += 'Votre mot de passe doit contenir des nombres.\n';
 			}
 			if(password.length < 8){
-				needMoreChars = true;
-				if(needMajuscules || needMinuscules || needNumbers){
-					message += " et il doit contenir au moins 8 caractères";
-				}
-				else {
-					message = "Faux! Votre mot de passe doit contenir au moins 8 caractères.";
-				}
+					message += "Votre mot de passe doit contenir au moins 8 caractères.";
 			}
 
 			password = window.prompt(message);

@@ -23,5 +23,4 @@ de passe doit contenir au moins 8 caractères, une majuscule, une minuscule, et 
 un programme qui vérifie si un mot de passe donné respecte ces conditions.
 1. Définir la regExp associée
 2. Tester si valide
-
 La regExp que nous utiliserons est la suivante: /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$/
